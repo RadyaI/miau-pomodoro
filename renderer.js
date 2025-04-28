@@ -7,7 +7,7 @@ let catImage = document.getElementById('catImage');
 
 let timeLeft = 25 * 60;
 let timerId = null;
-let catImages = ["cat1.jpeg", "cat2.jpeg", "cat3.jpeg"];
+let catImages = ["asset/cat1.jpeg", "asset/cat2.jpeg", "asset/cat3.jpeg"];
 let currentCatIndex = 0;
 
 function updateTimer() {
@@ -20,14 +20,14 @@ function showPopupMessage(message) {
     if (Notification.permission === "granted") {
         new Notification("Pomodoro Timer 🍅", {
             body: message,
-            icon: "cat1.jpeg"
+            icon: "asset/cat1.jpeg"
         });
     } else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
                 new Notification("Pomodoro Timer 🍅", {
                     body: message,
-                    icon: "cat1.jpeg"
+                    icon: "asset/cat1.jpeg"
                 });
             }
         });

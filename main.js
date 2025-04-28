@@ -11,7 +11,7 @@ function createWindow() {
       nodeIntegration: true,
       contextIsolation: false,
     },
-    icon: __dirname + '/cat3.jpeg'
+    icon: __dirname + 'asset/cat3.jpeg'
   });
 
   win.loadFile('index.html');
