@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Timer 🍅</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🍓 Pomodoro Timer 🍓</h1>
+        <div id="timer">25:00</div>
+
+        <div class="cat-container">
+            <img id="catImage" src="cat1.jpeg" alt="Cute Cat">
+        </div>
+
+        <div class="input-container">
+            <input type="number" id="minutesInput" placeholder="Masukkan menit..." min="1" />
+        </div>
+
+        <div class="preset-buttons">
+            <button onclick="setPreset(5)">5 Menit</button>
+            <button onclick="setPreset(20)">20 Menit</button>
+            <button onclick="setPreset(40)">40 Menit</button>
+            <button onclick="setPreset(60)">1 Jam</button>
+        </div>
+
+
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="reset">Reset</button>
+        </div>
+        <button id="toggleTheme" class="theme-toggle">🌙 Dark Mode</button>
+    </div>
+    <audio id="alarmSound" src="alarm.mp3"></audio>
+    <script src="renderer.js"></script>
+
+</body>
+
+</html>

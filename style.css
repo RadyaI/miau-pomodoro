@@ -1,0 +1,166 @@
+body {
+    background-color: #ffe4e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    padding: 20px; /* Ini buat jarak dari tepi */
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+    overflow: hidden; /* Hilangin scroll seluruh halaman */
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background-color: #fff0f5;
+    padding: 10px 15px; /* Ini padding dalam kotak */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+/* Rapetin semua elemen dalam container */
+h1 {
+    color: #ff69b4;
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+#timer {
+    font-size: 48px;
+    color: #ff1493;
+    margin: 10px 0;
+}
+
+.cat-container {
+    margin: 10px 0;
+}
+
+#catImage {
+    width: 120px;
+    height: auto;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.input-container {
+    margin: 10px 0;
+}
+
+#minutesInput {
+    width: 70%;
+    padding: 6px 10px;
+    border-radius: 15px;
+    border: 2px solid #ffb6c1;
+    font-size: 14px;
+    text-align: center;
+    outline: none;
+}
+
+.preset-buttons {
+    margin: 10px 0;
+}
+
+.preset-buttons button {
+    background-color: #ffd6e0;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    margin: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons {
+    margin: 10px 0;
+}
+
+.buttons button {
+    background-color: #ffb6c1;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 16px;
+    margin: 3px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle {
+    margin-top: 10px;
+    background-color: #add8e6;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Dark mode tetap */
+.dark-mode {
+    background-color: #2c2c2c;
+}
+
+.dark-mode .container {
+    background-color: #444;
+}
+
+.dark-mode h1,
+.dark-mode #timer,
+.dark-mode #minutesInput,
+.dark-mode .preset-buttons button,
+.dark-mode .buttons button,
+.dark-mode .theme-toggle {
+    color: #fff;
+}
+
+.dark-mode #minutesInput,
+.dark-mode .preset-buttons button,
+.dark-mode .buttons button,
+.dark-mode .theme-toggle {
+    background-color: #666;
+    border: 2px solid #ffb6c1;
+}
+
+.dark-mode .preset-buttons button:hover,
+.dark-mode .buttons button:hover,
+.dark-mode .theme-toggle:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+.popup-message {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffb6c1;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    z-index: 1000;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    10%, 90% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+}
