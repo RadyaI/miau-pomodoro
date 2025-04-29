@@ -30,9 +30,10 @@ h1 {
 }
 
 #timer {
-    font-size: 48px;
+    font-size: 52px;
     color: #ff1493;
-    margin: 10px 0;
+    margin: 15px 0;
+    text-shadow: 2px 2px #ffc0cb;
 }
 
 .cat-container {
@@ -46,6 +47,10 @@ h1 {
     transition: transform 0.5s ease;
 }
 
+#catImage:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
 .input-container {
     margin: 10px 0;
 }
@@ -54,10 +59,16 @@ h1 {
     width: 70%;
     padding: 6px 10px;
     border-radius: 15px;
-    border: 2px solid #ffb6c1;
-    font-size: 14px;
+    border: 2px dashed #ff69b4;
+    background-color: #fff8f9;
+    font-size: 16px;
     text-align: center;
     outline: none;
+    transition: border-color 0.3s;
+}
+
+#minutesInput:focus {
+    border-color: #ff1493;
 }
 
 .preset-buttons {
@@ -65,14 +76,22 @@ h1 {
 }
 
 .preset-buttons button {
-    background-color: #ffd6e0;
+    background: linear-gradient(145deg, #ffd6e0, #ffeef0);
+    color: #d63384;
+    font-weight: bold;
     border: none;
     border-radius: 20px;
     padding: 6px 12px;
     margin: 3px;
     font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 3px 6px rgba(255, 182, 193, 0.6);
+}
+
+.preset-buttons button:hover {
+    background: #ffb6c1;
+    transform: translateY(-2px);
 }
 
 .buttons {
@@ -90,6 +109,20 @@ h1 {
     transition: background-color 0.3s ease;
 }
 
+.buttons button:hover {
+    background-color: #ff69b4;
+    animation: wiggle 0.5s ease;
+    color: white;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(3deg); }
+    50% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+    100% { transform: rotate(0deg); }
+}
+
 .theme-toggle {
     margin-top: 10px;
     background-color: #add8e6;
@@ -98,52 +131,60 @@ h1 {
     padding: 8px 16px;
     font-size: 14px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 8px #add8e6;
 }
 
-.dark-mode {
-    background-color: #2c2c2c;
-}
-
-.dark-mode .container {
-    background-color: #444;
-}
-
-.dark-mode h1,
-.dark-mode #timer,
-.dark-mode #minutesInput,
-.dark-mode .preset-buttons button,
-.dark-mode .buttons button,
-.dark-mode .theme-toggle {
-    color: #fff;
-}
-
-.dark-mode #minutesInput,
-.dark-mode .preset-buttons button,
-.dark-mode .buttons button,
-.dark-mode .theme-toggle {
-    background-color: #666;
-    border: 2px solid #ffb6c1;
-}
-
-.dark-mode .preset-buttons button:hover,
-.dark-mode .buttons button:hover,
-.dark-mode .theme-toggle:hover {
-    background-color: #ff69b4;
+.theme-toggle:hover {
+    background-color: #87cefa;
     color: white;
 }
+
+    .dark-mode {
+        background-color: #2c2c2c;
+    }
+
+    .dark-mode .container {
+        background-color: #444;
+    }
+
+    .dark-mode h1,
+    .dark-mode #timer,
+    .dark-mode #minutesInput,
+    .dark-mode .preset-buttons button,
+    .dark-mode .buttons button,
+    .dark-mode .theme-toggle {
+        color: #bf4557;
+    }
+
+    .dark-mode #minutesInput,
+    .dark-mode .preset-buttons button,
+    .dark-mode .buttons button,
+    .dark-mode .theme-toggle {
+        background-color: #666;
+        border: 2px solid #ffb6c1;
+        color: #ffb6c1;
+    }
+
+    .dark-mode .preset-buttons button:hover,
+    .dark-mode .buttons button:hover,
+    .dark-mode .theme-toggle:hover {
+        background-color: #ff69b4;
+        color: #666;
+    }
 
 .popup-message {
     position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #ffb6c1;
+    background: linear-gradient(135deg, #ff69b4, #ffb6c1);
     color: #fff;
     padding: 10px 20px;
     border-radius: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     font-size: 16px;
+    font-weight: bold;
     z-index: 1000;
     animation: fadeInOut 3s ease-in-out;
 }
@@ -165,4 +206,10 @@ h1 {
 
 .hide {
     display: none;
+}
+
+.dancecat{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
