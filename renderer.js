@@ -15,7 +15,7 @@ let now = new Date().toLocaleDateString("id-ID", {
     month: "long"
 });
 
-if(now === "29 April") {
+if(now === "08 Mei") {
     hbd.classList.remove("hide");
     document.body.classList.add("birthday-mode");
     showPopupMessage("Selamat Ulang Tahun 🎉 Semoga makin semangat belajar yaa!");
