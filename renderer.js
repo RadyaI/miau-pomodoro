@@ -15,9 +15,13 @@ let now = new Date().toLocaleDateString("id-ID", {
     month: "long"
 });
 
-if(now === "08 Mei"){
-    hbd.classList.remove("hide")
+if(now === "29 April") {
+    hbd.classList.remove("hide");
+    document.body.classList.add("birthday-mode");
+    showPopupMessage("Selamat Ulang Tahun 🎉 Semoga makin semangat belajar yaa!");
+    document.title = "🎂 Happy Birthday!";
 }
+
 
 function updateTimer() {
     let minutes = Math.floor(timeLeft / 60);
@@ -27,14 +31,14 @@ function updateTimer() {
 
 function showPopupMessage(message) {
     if (Notification.permission === "granted") {
-        new Notification("Pomodoro Timer 🍅", {
+        new Notification("Haiii kamu 👋", {
             body: message,
             icon: "asset/cat1.jpeg"
         });
     } else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
-                new Notification("Pomodoro Timer 🍅", {
+                new Notification("Haiii kamu 👋", {
                     body: message,
                     icon: "asset/cat1.jpeg"
                 });
@@ -66,7 +70,7 @@ function startTimer() {
                 clearInterval(timerId);
                 timerId = null;
                 alarmSound.play();
-                showPopupMessage("Waktu Habis! Istirahat dulu ya 🌸");
+                showPopupMessage("Waktunya habis! Istirahat dulu yaaa 🌸");
                 changeCatImage();
             }
         }, 1000);
