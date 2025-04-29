@@ -4,11 +4,20 @@ let resetButton = document.getElementById('reset');
 let toggleThemeButton = document.getElementById('toggleTheme');
 let alarmSound = document.getElementById('alarmSound');
 let catImage = document.getElementById('catImage');
+let hbd = document.getElementById('hbd');
 
 let timeLeft = 25 * 60;
 let timerId = null;
 let catImages = ["asset/cat1.jpeg", "asset/cat2.jpeg", "asset/cat3.jpeg"];
 let currentCatIndex = 0;
+let now = new Date().toLocaleDateString("id-ID", {
+    day: "2-digit",
+    month: "long"
+});
+
+if(now === "08 Mei"){
+    hbd.classList.remove("hide")
+}
 
 function updateTimer() {
     let minutes = Math.floor(timeLeft / 60);
@@ -35,8 +44,8 @@ function showPopupMessage(message) {
 }
 
 function setPreset(minutes) {
-    timeLeft = minutes * 60; 
-    updateTimer();     
+    timeLeft = minutes * 60;
+    updateTimer();
 }
 
 function startTimer() {
@@ -104,5 +113,10 @@ function changeCatImage() {
 startButton.addEventListener('click', startTimer);
 resetButton.addEventListener('click', resetTimer);
 toggleThemeButton.addEventListener('click', toggleTheme);
+document.addEventListener("keydown", (event) => {
+    if (event.key == "Enter") {
+        startTimer()
+    }
+})
 
 updateTimer();
