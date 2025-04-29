@@ -1,6 +1,6 @@
 {
   "name": "pomodoro",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A cute pomodoro timer with cats!",
   "main": "main.js",
   "scripts": {
