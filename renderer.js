@@ -54,6 +54,7 @@ function setPreset(minutes) {
 
 function startTimer() {
     let minutesInput = document.getElementById('minutesInput').value;
+    document.getElementById("minutesInput").value = ''
 
     if (minutesInput) {
         timeLeft = parseInt(minutesInput) * 60;
