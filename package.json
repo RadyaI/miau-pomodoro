@@ -18,7 +18,7 @@
       "**/*"
     ],
     "win": {
-      "icon": "cat.ico",
+      "icon": "asset/cat3.ico",
       "target": [
         "portable",
         "nsis"
